@@ -14,6 +14,7 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => setPopularMovies(data.results));
   }, []);
+
   return (
     <>
       <div className="poster">
