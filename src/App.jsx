@@ -38,6 +38,8 @@ function App() {
     });
   };
 
+  // calling apis for initial loading, movie and tv endpoints
+  // saving to store XD
   const genresCall = async () => {
     let promises = [];
     let endPoints = ["tv", "movie"];
