@@ -35,6 +35,10 @@ const Carousel = ({ data, loading, endpoint, title }) => {
     });
   };
 
+  const top = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+
   const skItem = () => {
     return (
       <div className="skeletonItem">
@@ -71,9 +75,10 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                 <div
                   key={item.id}
                   className="carouselItem"
-                  onClick={() =>
-                    navigate(`/${item.media_type || endpoint}/${item.id}`)
-                  }
+                  onClick={() => {
+                    navigate(`/${item.media_type || endpoint}/${item.id}`);
+                    top();
+                  }}
                 >
                   <div className="posterBlock">
                     <Img src={posterUrl} />
